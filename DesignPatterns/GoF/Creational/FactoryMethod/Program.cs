@@ -14,13 +14,13 @@ namespace DesignPatterns.GoF.Creational.FactoryMethod
             {
                 p1.ProdudeEpisode("Weird Timeline"),
                 p1.ProdudeEpisode("Another Timeline"),
-                p1.ProdudeEpisode("You Dont Get Anything At This Point")
+                p1.ProdudeEpisode("You Don't Get Anything At This Point")
             };
             PlayAllEpisodes(episodePlayList);
                         
             episodePlayList.Add(p2.ProdudeEpisode("Walk Barry! Walk!"));
             episodePlayList.Add(p2.ProdudeEpisode("Run Barry! Run!"));
-            episodePlayList.Add(p2.ProdudeEpisode("Do a Barrel Roll Bary!"));
+            episodePlayList.Add(p2.ProdudeEpisode("Do a Barrel Roll Barry!"));
             PlayAllEpisodes(episodePlayList);
 
             Console.ReadKey();
