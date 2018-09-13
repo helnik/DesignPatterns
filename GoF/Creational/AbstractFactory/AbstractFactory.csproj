@@ -42,9 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractTvFactory.cs" />
-    <Compile Include="MorningTime.cs" />
-    <Compile Include="PrimeTime.cs" />
+    <Compile Include="ITvProgrammFactory.cs" />
+    <Compile Include="IMorningTime.cs" />
+    <Compile Include="IPrimeTime.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -5,18 +5,18 @@ namespace DesignPatterns.GoF.Creational.AbstractFactory
     /// <summary>
     /// Abstract show
     /// </summary>
-    public abstract class PrimeTime
+    public interface IPrimeTime
     {
-        public abstract void Show();
+        void Show();
     }
 
     /// <summary>
     /// Concrete implementation
     /// </summary>
-    public class MensPrimeTime : PrimeTime
+    public class MensPrimeTime : IPrimeTime
     {        
 
-        public override void Show()
+        public void Show()
         {
             Console.WriteLine("Showing: Football");
         }
@@ -25,10 +25,10 @@ namespace DesignPatterns.GoF.Creational.AbstractFactory
     /// <summary>
     /// Concrete implementation
     /// </summary>
-    public class WomensPrimeTime : PrimeTime
+    public class WomensPrimeTime : IPrimeTime
     {
 
-        public override void Show()
+        public void Show()
         {
             Console.WriteLine("Showing: Sex and the city");
         }
@@ -37,10 +37,10 @@ namespace DesignPatterns.GoF.Creational.AbstractFactory
     /// <summary>
     /// Concrete implementation
     /// </summary>
-    public class KidShow : PrimeTime
+    public class KidShow : IPrimeTime
     {
 
-        public override void Show()
+        public void Show()
         {
             Console.WriteLine("Showing: Dragonball");
         }

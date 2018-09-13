@@ -3,22 +3,22 @@
     /// <summary>
     /// Abstract Factory. Define methods to create the objects
     /// </summary>
-    public abstract class AbstractTvFactory
+    public interface ITvProgrammFactory
     {
-        public abstract MorningTime GetMorningTime();
-        public abstract PrimeTime GetPrimeTime();
+        IMorningTime GetMorningTime();
+        IPrimeTime GetPrimeTime();
     }
 
     /// <summary>
     /// Concrete Factory. Creates concrete objects
     /// </summary>
-    public class MensTvFactory : AbstractTvFactory
+    public class MensTvFactory : ITvProgrammFactory
     {
-        public override MorningTime GetMorningTime()
+        public IMorningTime GetMorningTime()
         {
             return new MensMorning();
         }
-        public override PrimeTime GetPrimeTime()
+        public IPrimeTime GetPrimeTime()
         {
             return new MensPrimeTime();
         }
@@ -27,13 +27,13 @@
     /// <summary>
     /// Concrete Factory. Creates concrete objects
     /// </summary>
-    public class WomensTvFactory : AbstractTvFactory
+    public class WomensTvFactory : ITvProgrammFactory
     {
-        public override MorningTime GetMorningTime()
+        public IMorningTime GetMorningTime()
         {
             return new WomensMorning();
         }
-        public override PrimeTime GetPrimeTime()
+        public IPrimeTime GetPrimeTime()
         {
             return new WomensPrimeTime();
         }
@@ -42,13 +42,13 @@
     /// <summary>
     /// Concrete Factory. Creates concrete objects
     /// </summary>
-    public class KidsTvFactory : AbstractTvFactory
+    public class KidsTvFactory : ITvProgrammFactory
     {
-        public override MorningTime GetMorningTime()
+        public IMorningTime GetMorningTime()
         {
             return new KidsMorning();
         }
-        public override PrimeTime GetPrimeTime()
+        public IPrimeTime GetPrimeTime()
         {
             return new KidShow();
         }

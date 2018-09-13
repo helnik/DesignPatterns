@@ -5,7 +5,7 @@ namespace DesignPatterns.GoF.Creational.AbstractFactory
 {
     class Program
     {
-        private static Dictionary<string, AbstractTvFactory> channelsRepository = new Dictionary<string, AbstractTvFactory>()
+        private static Dictionary<string, ITvProgrammFactory> channelsRepository = new Dictionary<string, ITvProgrammFactory>()
         {
             {"M", new MensTvFactory() },
             {"W", new WomensTvFactory()},
@@ -16,7 +16,7 @@ namespace DesignPatterns.GoF.Creational.AbstractFactory
         {
             Console.WriteLine("Choose between (M)en's, (W)omen's or (K)id's channel");
             string seletion = Console.ReadKey().KeyChar.ToString().ToUpper();
-            if (channelsRepository.TryGetValue(seletion, out AbstractTvFactory factory))
+            if (channelsRepository.TryGetValue(seletion, out ITvProgrammFactory factory))
             {
                 WatchTv(factory);
             }
@@ -27,7 +27,7 @@ namespace DesignPatterns.GoF.Creational.AbstractFactory
             Console.ReadKey();
         }
 
-        private static void WatchTv(AbstractTvFactory factory)
+        private static void WatchTv(ITvProgrammFactory factory)
         {
             Console.WriteLine();
             var morning = factory.GetMorningTime();
