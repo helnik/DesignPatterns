@@ -5,19 +5,19 @@ namespace DesignPatterns.Creational.Prototype
     /// <summary>
     /// Abstract prototype
     /// </summary>
-    public abstract class TvShowPrototype
+    public interface ITvShowPrototype
     {
         //choose either swallow or deep
         //if object has reference type, changes to that type will change original object also
-        public abstract TvShowPrototype SwallowClone();
+        ITvShowPrototype SwallowClone();
         
-        public abstract TvShowPrototype DeepClone();
+        ITvShowPrototype DeepClone();
     }
 
     /// <summary>
     /// Concrete implementation
     /// </summary>
-    public class PopularTvShow : TvShowPrototype
+    public class PopularTvShow : ITvShowPrototype
     {
         private string genre;
         private string title;
@@ -36,13 +36,13 @@ namespace DesignPatterns.Creational.Prototype
             };
         }
 
-        public override TvShowPrototype SwallowClone()
+        public ITvShowPrototype SwallowClone()
         {
             Console.WriteLine($"Showing on repeat: {this.ToString()}");
             return (PopularTvShow) MemberwiseClone();
         }
 
-        public override TvShowPrototype DeepClone()
+        public ITvShowPrototype DeepClone()
         {
             Console.WriteLine($"Showing on repeat (deep): {this.ToString()}");
             return new PopularTvShow(this.genre, this.title, this.durationInMinutes, this.additional.Summary, this.additional.IsPrimeTime);

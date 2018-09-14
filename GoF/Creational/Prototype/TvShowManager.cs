@@ -4,9 +4,9 @@ namespace DesignPatterns.Creational.Prototype
 {
     public class TvShowManager
     {
-        private Dictionary<string, TvShowPrototype> shows = new Dictionary<string, TvShowPrototype>();
+        private Dictionary<string, ITvShowPrototype> shows = new Dictionary<string, ITvShowPrototype>();
         
-        public TvShowPrototype this[string key]
+        public ITvShowPrototype this[string key]
         {
             get { return shows[key]; }
             set { shows.Add(key, value);}
