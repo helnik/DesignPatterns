@@ -42,7 +42,7 @@ namespace DesignPatterns.GoF.Structural.Flyweight
         public SadEpisode()
         {
             ShowName = "House M.D.";
-            EpisodeTitle = "Sadest episode of the series";
+            EpisodeTitle = "Saddest episode of the series";
             Duration = "60";             
 
             Console.WriteLine("Filmed sad episode");
