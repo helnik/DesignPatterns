@@ -4,8 +4,16 @@ namespace DesignPatterns.GoF.Creational.Builder
 {
     class Program
     {
+
+        static void printUsage()
+        {
+            Console.WriteLine("This is an implementation of the Builder pattern");
+            Console.WriteLine("Please sit down and relax");
+        }
+
         static void Main(string[] args)
         {
+            printUsage();
             //director
             var produder = new EpisodeProducer();
             EpisodeBuilder builder;
